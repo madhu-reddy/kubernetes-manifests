@@ -1,0 +1,5 @@
+https://github.com/techiescamp/kubeadm-scripts  # Setup all cluster components with a simple script
+
+
+kubectl exec envar-demo -- printenv
+kubectl exec  -ti envar-demo --container envar-demo-container -- printenv
