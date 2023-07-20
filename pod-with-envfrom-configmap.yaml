@@ -1,0 +1,36 @@
+#When you create a Pod, you can set environment variables for the containers that run in the Pod. To set environment variables, include the env or envFrom field in the configuration file.
+
+#The env and envFrom fields have different effects.
+
+#env
+#allows you to set environment variables for a container, specifying a value directly for each variable that you name.
+
+#envFrom
+#allows you to set environment variables for a container by referencing either a ConfigMap or a Secret. 
+
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: game-demo
+data:
+  # property-like keys; each key maps to a simple value
+  player_initial_lives: "3"
+  ui_properties_file_name: "user-interface.properties"
+
+  # file-like keys
+  game.properties: |
+    enemy.types=aliens,monsters
+    player.maximum-lives=5    
+  user-interface.properties: |
+    color.good=purple
+    color.bad=yellow
+    allow.textmode=true    
+
+
+
+
+
+
+
+
